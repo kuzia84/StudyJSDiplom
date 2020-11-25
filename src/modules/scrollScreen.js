@@ -1,32 +1,23 @@
 const scrollScreen = () => {
-  const scrollLinks = document.querySelectorAll(".scroll-link");
-
-  scrollLinks.forEach((element) => {
-    const animateScroll = () => {
-      const toBlock = element.getAttribute("href"),
-        scrollTo = document.querySelector(toBlock),
-        scrollToBlock = scrollTo.offsetTop;
-      const animationStart = Date.now();
-      const animationTimer = setInterval(() => {
-        const timePassed = Date.now() - animationStart;
-
-        if (timePassed > 510) {
-          clearInterval(animationTimer);
-          return;
-        }
-
-        draw(timePassed);
-
-        function draw(timePassed) {
-          const scrollValue = timePassed * 0.002 * scrollToBlock;
-          document.documentElement.scrollTop = scrollValue;
-        }
-      }, 20);
-    };
-
-    element.addEventListener("click", () => {
-      animateScroll();
+  const menu = document.querySelector(".popup-dialog-menu"),
+    buttonFooter = document.querySelector(".button-footer");
+  const animateScroll = (scrollToBlock) => {
+    window.scrollTo({
+      top: scrollToBlock,
+      behavior: "smooth",
     });
+  };
+  menu.addEventListener("click", (event) => {
+    const target = event.target,
+      scrollTo = document.querySelector(target.getAttribute("href")),
+      scrollToBlock = scrollTo.offsetTop;
+    animateScroll(scrollToBlock);
+    event.preventDefault();
+  });
+
+  buttonFooter.addEventListener("click", (e) => {
+    e.preventDefault();
+    animateScroll(0);
   });
 };
 

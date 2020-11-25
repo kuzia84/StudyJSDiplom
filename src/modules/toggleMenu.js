@@ -1,5 +1,5 @@
 const toggleMenu = () => {
-  const menu = document.querySelector("menu"),
+  const menu = document.querySelector(".popup-dialog-menu"),
     btnMenu = document.querySelector(".menu");
 
   const menuHandler = () => {
@@ -9,8 +9,8 @@ const toggleMenu = () => {
   document.body.addEventListener("click", (event) => {
     let target = event.target;
     if (
-      target.classList.contains("close-btn") ||
-      target.classList.contains("scroll-link") ||
+      target.classList.contains("close-menu") ||
+      target.classList.contains("menu-link") ||
       target.parentNode === btnMenu
     ) {
       menuHandler();

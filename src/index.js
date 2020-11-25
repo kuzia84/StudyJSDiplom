@@ -19,14 +19,13 @@ import sendForm from "./modules/sendForm";
 
 //Header Phones
 headerPhones();
-
-/*
 //Menu
 toggleMenu();
-//TogglePopup
-togglePopup();
 //ScrollScreen
 scrollScreen();
+/*
+//TogglePopup
+togglePopup();
 //Tabs
 tabs();
 //Slider
