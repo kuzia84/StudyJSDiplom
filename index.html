@@ -169,8 +169,8 @@
               <button class="button">Перезвоните мне</button>
               <div class="checkbox"><input class="checkbox__input" type="checkbox" id="checkbox1"> <label
                   class="checkbox__label" for="checkbox1"></label>
-                <div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с <span
-                    class="link-privacy">политикой конфиденциальности</span>
+                <div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с <a href="#popup-privacy"
+                    class="link-privacy" data-toggle="modal">политикой конфиденциальности</a>
                 </div>
               </div>
             </form>
@@ -407,13 +407,15 @@
                 fill="#322823"></path>
             </svg>
           </div>
-          <div class="link-list link-list-repair desktop-hide"><a>Полный список услуг и цен
+          <div class="link-list link-list-repair desktop-hide">
+            <a href="#popup-repair-types" data-toggle="modal">Полный список услуг и цен
               <svg width="17" height="16" fill="none" viewBox="0 0 17 16" preserveAspectRatio="xMinYMin meet">
                 <path
                   d="M16.207 8.707a1 1 0 0 0 0-1.414L9.843.929A1 1 0 1 0 8.43 2.343L14.086 8l-5.657 5.657a1 1 0 1 0 1.414 1.414l6.364-6.364zM0 9h15.5V7H0v2z"
                   fill="#7F6956"></path>
               </svg>
-            </a></div><!-- link-list tablet-hide  -->
+            </a>
+          </div><!-- link-list tablet-hide  -->
         </div><!-- /repair-types-slider-wrap -->
         <div class="repair-types-tab">
           <div class="section-title repair-types-title">Какие виды<br><span>ремонта мы делаем:</span></div>
@@ -476,7 +478,8 @@
               </svg>
             </div>
           </div><!-- /.repair-types__nav-wrap -->
-          <div class="link-list link-list-repair mobile-hide tablet-hide"><a>Полный список услуг и цен
+          <div class="link-list link-list-repair mobile-hide tablet-hide"><a href="#popup-repair-types"
+              data-toggle="modal">Полный список услуг и цен
               <div>
                 <svg width="17" height="16" fill="none" viewBox="0 0 18 12" preserveAspectRatio="xMinYMin meet">
                   <path
@@ -510,8 +513,8 @@
         <button class="button button-feedback-block">Перезвоните мне</button>
         <div class="checkbox checkbox-feedback-block"><input class="checkbox__input" type="checkbox" id="checkbox2"
             required=""> <label class="checkbox__label" for="checkbox2"></label>
-          <div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на <span class="link-privacy">обработку
-              своих персональных данных</span>
+          <div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на <a href="#popup-privacy"
+              class="link-privacy" data-toggle="modal">обработку своих персональных данных</a>
           </div>
         </div>
       </form>
@@ -1097,8 +1100,8 @@
             <button class="button">Перезвоните мне</button>
             <div class="checkbox"><input class="checkbox__input" type="checkbox" id="checkbox3"> <label
                 class="checkbox__label" for="checkbox3"></label>
-              <div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с <span
-                  class="link-privacy">политикой конфиденциальности</span>
+              <div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с <a href="#popup-privacy"
+                  class="link-privacy" data-toggle="modal">политикой конфиденциальности</a>
               </div>
             </div>
           </form>
@@ -1449,8 +1452,8 @@
         <button class="button button-feedback-block">Перезвоните мне</button>
         <div class="checkbox checkbox-feedback-block"><input class="checkbox__input" type="checkbox" id="checkbox4"
             required=""> <label class="checkbox__label" for="checkbox4"></label>
-          <div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на <span class="link-privacy">обработку
-              своих персональных данных</span>
+          <div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на <a href="#popup-privacy"
+              class="link-privacy" data-toggle="modal">обработку своих персональных данных</a>
           </div>
         </div>
       </form>
@@ -1787,8 +1790,8 @@
         <button class="button button-feedback-block">Перезвоните мне</button>
         <div class="checkbox checkbox-feedback-block"><input class="checkbox__input" type="checkbox" id="checkbox5"
             required=""> <label class="checkbox__label" for="checkbox5"></label>
-          <div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на <span class="link-privacy">обработку
-              своих персональных данных</span>
+          <div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на <a href="#popup-privacy"
+              class="link-privacy" data-toggle="modal">обработку своих персональных данных</a>
           </div>
         </div>
       </form>
@@ -1914,7 +1917,8 @@
         <div class="row row_reverse">
           <div class="copyright">
             <div class="copyright__title">Все права защищены © 2019.</div>
-            <div class="copyright__subtitle link-privacy">Политика конфиденциальности</div>
+            <div class="copyright__subtitle link-privacy"><a href="#popup-privacy" class="link-privacy"
+                data-toggle="modal">Политика конфиденциальности</a> </div>
           </div>
           <button class="button-footer"><a href="#main">Вверх</a></button>
         </div>
@@ -1953,27 +1957,33 @@
             <div class="popup-menu-nav__item"><a class="menu-link scroll-link" href="#faq">часто задаваемые вопросы</a>
             </div>
             <div class="popup-menu-nav__item"><a class="menu-link scroll-link" href="#partners">наши партнеры</a></div>
-            <div class="link-list link-list-menu mobile-hide"><a class="menu-link no-overflow" href="#">
+            <div class="link-list link-list-menu mobile-hide">
+              <a class="menu-link no-overflow" href="#popup-repair-types" data-toggle="modal">
                 <svg width="17" height="16" fill="none" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M.293 8.707a1 1 0 0 1 0-1.414L6.657.929A1 1 0 0 1 8.07 2.343L2.414 8l5.657 5.657a1 1 0 1 1-1.414 1.414L.293 8.707zM16.5 9H1V7h15.5v2z"
                     fill="#CFB8A4"></path>
                 </svg>
-                Полный список услуг и цен</a></div>
+                Полный список услуг и цен
+              </a>
+            </div>
           </nav>
         </div>
-        <div class="popup-menu-copyright">Все права защищены © 2019. Политика конфиденциальности</div>
+        <div class="popup-menu-copyright">Все права защищены © 2019. <a href="#popup-privacy" class="link-privacy"
+            data-toggle="modal">Политика конфиденциальности</a></div>
       </div>
-      <div class="link-list link-list-menu tablet-hide desktop-hide"><a class="menu-link no-overflow" href="#">
+      <div class="link-list link-list-menu tablet-hide desktop-hide">
+        <a class="menu-link no-overflow" href="#popup-repair-types" data-toggle="modal">
           <svg width="17" height="16" fill="none" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M.293 8.707a1 1 0 0 1 0-1.414L6.657.929A1 1 0 0 1 8.07 2.343L2.414 8l5.657 5.657a1 1 0 1 1-1.414 1.414L.293 8.707zM16.5 9H1V7h15.5v2z"
               fill="#CFB8A4"></path>
           </svg>
-          Полный список услуг и цен</a></div>
+          Полный список услуг и цен</a>
+      </div>
     </div>
   </div>
-  <div class="popup popup-consultation">
+  <div class="popup popup-consultation" id="popup-consultation">
     <div class="feedback-wrap">
       <div class="close close-consultation">
         <svg width="22" height="22" fill="none" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
@@ -1999,14 +2009,14 @@
         <button class="button button-consultation">Перезвоните мне</button>
         <div class="checkbox"><input class="checkbox__input" type="checkbox" id="checkbox6"> <label
             class="checkbox__label checkbox__label-consultation" for="checkbox6"></label>
-          <div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с <span
-              class="link-privacy">политикой конфиденциальности</span>
+          <div class="checkbox__descr checkbox__descr_round-feedback">Я соглашаюсь с <a href="#popup-privacy"
+              class="link-privacy" data-toggle="modal">политикой конфиденциальности</a>
           </div>
         </div>
       </form>
     </div><!-- /feedback -->
   </div><!-- /popup consultation -->
-  <div class="popup popup-thank">
+  <div class="popup popup-thank" id="popup-thank">
     <div class="feedback-wrap popup-thank-bg">
       <div class="close close-thank">
         <svg width="22" height="22" fill="none" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
@@ -2027,7 +2037,7 @@
       </div>
     </div><!-- /feedback -->
   </div>
-  <div class="popup popup-repair-types">
+  <div class="popup popup-repair-types" id="popup-repair-types">
     <div class="close mobile-hide">
       <svg width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -2447,7 +2457,7 @@
     </div><!-- /popup-dialog -->
   </div>
   <!-- /popup popup-repair-types -->
-  <div class="popup popup-portfolio">
+  <div class="popup popup-portfolio" id="popup-portfolio">
     <div class="close mobile-hide">
       <svg width="22" height="22" fill="none" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -2852,7 +2862,7 @@
       </div>
     </div>
   </div><!-- /popup-portfolio -->
-  <div class="popup popup-transparency">
+  <div class="popup popup-transparency" id="popup-transparency">
     <div class="close mobile-hide">
       <svg width="22" height="22" fill="none" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -2901,7 +2911,7 @@
       </div>
     </div>
   </div>
-  <div class="popup popup-design">
+  <div class="popup popup-design" id="popup-design">
     <div class="close mobile-hide">
       <svg width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -3106,7 +3116,7 @@
       </div><!-- /popup-design-tab__item row-->
     </div><!-- /popup-design-tab -->
   </div><!-- /popup-design -->
-  <div class="popup popup-privacy">
+  <div class="popup popup-privacy" id="popup-privacy">
     <div class="close mobile-hide">
       <svg width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
         <path fill-rule="evenodd" clip-rule="evenodd"

@@ -4642,7 +4642,7 @@ div.wave-block:nth-child(17):after {
 .copyright__title {
   color: #322823;
 }
-.copyright__subtitle {
+.copyright__subtitle a {
   color: #bbbbbb;
 }
 
@@ -5565,6 +5565,9 @@ div.wave-block:nth-child(17):after {
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.popup-menu-copyright a {
   color: rgba(255, 255, 255, 0.5);
 }
 @media (max-width: 1024px) {
@@ -7468,10 +7471,11 @@ div.wave-block:nth-child(17):after {
     line-height: 11px;
   }
 }
-.checkbox__descr span {
+.checkbox__descr a {
   cursor: pointer;
+  color: #322823;
 }
-.checkbox__descr span:hover {
+.checkbox__descr a:hover {
   text-decoration: underline;
 }
 .checkbox__descr_round-feedback {

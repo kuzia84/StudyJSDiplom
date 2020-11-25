@@ -23,10 +23,9 @@ headerPhones();
 toggleMenu();
 //ScrollScreen
 scrollScreen();
-/*
 //TogglePopup
 togglePopup();
-//Tabs
+/*//Tabs
 tabs();
 //Slider
 // slider();
