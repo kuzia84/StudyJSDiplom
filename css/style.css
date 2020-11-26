@@ -1382,6 +1382,15 @@ template,
     background-size: contain;
   }
 }
+.formula-item-popup-reverse {
+  transform: translateY(5px);
+  padding-top: 35px;
+  top: 155px;
+  z-index: 10;
+}
+.active-item .formula-item-popup-reverse::before {
+  transform: rotateZ(180deg);
+}
 
 .repair-types {
   position: relative;

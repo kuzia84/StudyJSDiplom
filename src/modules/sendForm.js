@@ -14,25 +14,6 @@ const sendForm = (formId) => {
     `;
   statusMessage.style.cssText = "font-size: 2rem;";
 
-  form.addEventListener("input", (event) => {
-    const target = event.target;
-
-    if (target.matches(".form-name")) {
-      target.value = target.value.replace(/[^а-я ]/gi, "");
-    }
-    if (target.matches(".mess")) {
-      target.value = target.value.replace(/[^а-я \-\.\!\?\;\:]/gi, "");
-    }
-
-    if (target.matches(".form-phone")) {
-      if (target.value.match(/^\+?\d+$/gi)) {
-        target.style.backgroundColor = "green";
-      } else {
-        target.style.backgroundColor = "red";
-      }
-    }
-  });
-
   const postData = (body) =>
     fetch("./server.php", {
       method: "POST",
@@ -63,7 +44,6 @@ const sendForm = (formId) => {
         console.error(error);
       });
     document.getElementById(formId).reset();
-    form.querySelector(".form-phone").style.backgroundColor = "";
     setTimeout(() => {
       statusMessage.innerHTML = "";
     }, 8000);
