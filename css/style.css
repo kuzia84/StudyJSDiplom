@@ -1382,13 +1382,13 @@ template,
     background-size: contain;
   }
 }
-.formula-item-popup-reverse {
+.popup-tooltip-reverse {
   transform: translateY(5px);
   padding-top: 35px;
   top: 155px;
   z-index: 10;
 }
-.active-item .formula-item-popup-reverse::before {
+.active-item .popup-tooltip-reverse::before {
   transform: rotateZ(180deg);
 }
 
@@ -2736,6 +2736,7 @@ div.wave-block:nth-child(17):after {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: url("../images/plus.svg") center no-repeat;
 }
 .problems-item-popup {
   position: absolute;
@@ -7668,11 +7669,10 @@ div.wave-block:nth-child(17):after {
 .active-item .problems-item__icon-inner svg path {
   fill: #ffffff;
 }
-@media (max-width: 1024px) {
-  .active-item .problems-item-popup {
-    visibility: visible;
-    opacity: 1;
-  }
+
+.active-item .problems-item-popup {
+  visibility: visible;
+  opacity: 1;
 }
 
 #designs > .wrapper > div.preview-block.visible > .preview-block__item > .preview-block__item-inner.preview_active {

@@ -1,33 +1,35 @@
-const tooltip = () => {
-  const wrapper = document.querySelector(
-    ".formula .wrapper_small.mobile-hide.tablet-hide"
-  );
+const tooltip = (selector) => {
+  const wrapper = document.querySelector(selector);
 
-  wrapper.addEventListener("mouseover", (event) => {
-    let target = event.target;
+  wrapper.addEventListener(
+    "mouseover",
+    (event) => {
+      let target = event.target;
 
-    if (target.matches(".formula-item__icon-inner-text")) {
-      target = target.closest(".formula-item__icon");
-      target.classList.add("active-item");
-      const popup = target.querySelector(".formula-item-popup"),
-        scrollTop = popup.getBoundingClientRect().top,
-        row = target.closest(".row");
+      if (target.matches(".tooltip-toggler")) {
+        target = target.closest(".item-with-tooltip");
+        target.classList.add("active-item");
+        const popup = target.querySelector(".popup-tooltip"),
+          scrollTop = popup.getBoundingClientRect().top,
+          row = target.closest(".row");
 
-      if (scrollTop < 0) {
-        popup.classList.add("formula-item-popup-reverse");
-        row.style.zIndex = 1;
+        if (scrollTop < 0) {
+          popup.classList.add("popup-tooltip-reverse");
+          row.style.zIndex = 1;
+        }
       }
-    }
-  });
+    },
+    false
+  );
   wrapper.addEventListener("mouseout", (event) => {
     let target = event.target;
 
-    if (target.matches(".formula-item__icon-inner-text")) {
-      target = target.closest(".formula-item__icon");
+    if (target.matches(".tooltip-toggler")) {
+      target = target.closest(".item-with-tooltip");
       target.classList.remove("active-item");
-      const popup = target.querySelector(".formula-item-popup"),
+      const popup = target.querySelector(".popup-tooltip"),
         row = target.closest(".row");
-      popup.classList.remove("formula-item-popup-reverse");
+      popup.classList.remove("popup-tooltip-reverse");
       row.style.zIndex = "";
     }
   });

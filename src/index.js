@@ -30,7 +30,8 @@ togglePopup();
 //Mask phone
 maskPhone(".masked-phone");
 //Tooltips
-tooltip();
+tooltip(".formula .wrapper_small.mobile-hide.tablet-hide");
+tooltip(".problems .wrapper_middle.mobile-hide.tablet-hide");
 /*//Send ajax from
 sendForm("feedback1");
 sendForm("feedback2");
