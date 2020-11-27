@@ -43,6 +43,34 @@ class SliderCarousel {
     }
   }
 
+  responsInit() {
+    const slidesToShowDefault = this.slidesToShow,
+      allResponse = this.responsive.map((item) => item.breakpoint),
+      maxResponse = Math.max(...allResponse);
+
+    const checkResponse = () => {
+      const windowWidth = document.documentElement.clientWidth;
+      if (windowWidth < maxResponse) {
+        for (let i = 0; i < allResponse.length; i++) {
+          if (windowWidth < allResponse[i]) {
+            this.slidesToShow = this.responsive[i].slidesToShow;
+            this.options.widthSlide = Math.floor(100 / this.slidesToShow);
+            this.options.maxPosition = this.slides.length - this.slidesToShow;
+            this.addStyle();
+          }
+        }
+      } else {
+        this.slidesToShow = slidesToShowDefault;
+        this.options.widthSlide = Math.floor(100 / this.slidesToShow);
+        this.options.maxPosition = this.slides.length - this.slidesToShow;
+        this.addStyle();
+      }
+    };
+    checkResponse();
+
+    window.addEventListener("resize", this.responsInit.bind(this));
+  }
+
   addGloClass() {
     this.main.classList.add("glo-slider");
     this.wrap.classList.add("glo-slider__wrap");
@@ -52,21 +80,25 @@ class SliderCarousel {
   }
 
   addStyle() {
-    let style = document.getElementById("sliderCarousel-style");
+    let style = document.getElementById(
+      `${this.main.classList[0]}-sliderCarousel-style`
+    );
     if (!style) {
       style = document.createElement("style");
-      style.id = "sliderCarousel-style";
+      style.id = `${this.main.classList[0]}-sliderCarousel-style`;
     }
+    console.log(this.main.classList[0]);
     style.textContent = `
-      .glo-slider {
+      .${this.main.classList[0]}.glo-slider {
           overflow:hidden;
       }
-      .glo-slider__wrap {
-          display: flex;
+      .${this.main.classList[0]} .glo-slider__wrap {
+          display: flex !important;
+          flex-wrap: nowrap;
           transition: transform 0.5s;
           will-change: transform;
       }
-      .glo-slider__item {
+      .${this.main.classList[0]} .glo-slider__item {
           flex: 0 0 ${this.options.widthSlide}%;
           margin: auto 0;
       }
@@ -138,32 +170,6 @@ class SliderCarousel {
         }
     `;
     document.head.append(style);
-  }
-
-  responsInit() {
-    const slidesToShowDefault = this.slidesToShow,
-      allResponse = this.responsive.map((item) => item.breakpoint),
-      maxResponse = Math.max(...allResponse);
-
-    const checkResponse = () => {
-      const windowWidth = document.documentElement.clientWidth;
-      if (windowWidth < maxResponse) {
-        for (let i = 0; i < allResponse.length; i++) {
-          if (windowWidth < allResponse[i]) {
-            this.slidesToShow = this.responsive[i].slidesToShow;
-            this.options.widthSlide = Math.floor(100 / this.slidesToShow);
-            this.addStyle();
-          }
-        }
-      } else {
-        this.slidesToShow = slidesToShowDefault;
-        this.options.widthSlide = Math.floor(100 / this.slidesToShow);
-        this.addStyle();
-      }
-    };
-    checkResponse();
-
-    window.addEventListener("resize", this.responsInit.bind(this));
   }
 }
 

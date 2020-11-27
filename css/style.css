@@ -3899,7 +3899,7 @@ div.wave-block:nth-child(17):after {
 }
 .reviews-slider {
   height: 314px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .reviews-slider-wrap {
   position: relative;
@@ -4460,7 +4460,7 @@ div.wave-block:nth-child(17):after {
 }
 @media (max-width: 1024px) {
   .partners-slider__slide {
-    max-width: 114px;
+    /*max-width: 114px;*/
     min-height: auto;
   }
   .partners-slider__slide svg {
@@ -4472,7 +4472,7 @@ div.wave-block:nth-child(17):after {
 }
 @media (max-width: 575px) {
   .partners-slider__slide {
-    max-width: 134px;
+    /*max-width: 134px;*/
     min-height: auto;
   }
   .partners-slider__slide svg {
