@@ -52,19 +52,27 @@ const docsSlider = new SliderCarousel({
 });
 docsSlider.init();
 
-const docsSliderPopup = new SliderCarousel({
-  main: ".popup-transparency-slider",
-  wrap: ".popup-transparency-slider-wrapper",
-  prev: "#transparency_left",
-  next: "#transparency_right",
-  slidesToShow: 1,
-  infinity: true,
-});
-document.querySelectorAll(".transparency-item__img").forEach((element) => {
-  element.addEventListener("click", () => {
+const docsSliderPopupToggler = document.querySelectorAll(
+  ".transparency-item__img"
+);
+for (let i = 0; i < docsSliderPopupToggler.length; i++) {
+  docsSliderPopupToggler[i].addEventListener("click", () => {
+    const docsSliderPopup = new SliderCarousel({
+      main: ".popup-transparency-slider",
+      wrap: ".popup-transparency-slider-wrapper",
+      prev: "#transparency_left",
+      next: "#transparency_right",
+      position: i - 1,
+      slidesToShow: 1,
+      infinity: true,
+      pagination: true,
+      paginationStyle: "dark",
+    });
+
     docsSliderPopup.init();
+    docsSliderPopup.nextSlider();
   });
-});
+}
 
 const reviews = new SliderCarousel({
   main: ".reviews-slider",

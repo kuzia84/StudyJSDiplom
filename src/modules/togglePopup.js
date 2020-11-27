@@ -12,11 +12,13 @@ const togglePopup = () => {
         modalName = target.dataset.href;
       }
       const modal = document.querySelector(modalName),
-        closeBtn = modal.querySelector(".close");
+        closeBtns = modal.querySelectorAll(".close");
 
       modal.style.visibility = "visible";
-      closeBtn.addEventListener("click", () => {
-        modal.style.visibility = "hidden";
+      closeBtns.forEach((element) => {
+        element.addEventListener("click", () => {
+          modal.style.visibility = "hidden";
+        });
       });
     });
   });

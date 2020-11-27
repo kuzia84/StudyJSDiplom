@@ -7,6 +7,8 @@ class SliderCarousel {
     infinity = false,
     position = 0,
     slidesToShow = 3,
+    pagination = false,
+    paginationStyle = "white",
     responsive = [],
   }) {
     if (!main || !wrap) {
@@ -25,6 +27,8 @@ class SliderCarousel {
       maxPosition: this.slides.length - this.slidesToShow,
     };
     this.responsive = responsive;
+    this.pagination = pagination;
+    this.paginationStyle = paginationStyle;
   }
 
   init() {
@@ -40,6 +44,10 @@ class SliderCarousel {
 
     if (this.responsive) {
       this.responsInit();
+    }
+
+    if (this.pagination) {
+      this.addPagination();
     }
   }
 
@@ -87,7 +95,6 @@ class SliderCarousel {
       style = document.createElement("style");
       style.id = `${this.main.classList[0]}-sliderCarousel-style`;
     }
-    console.log(this.main.classList[0]);
     style.textContent = `
       .${this.main.classList[0]}.glo-slider {
           overflow:hidden;
@@ -114,12 +121,16 @@ class SliderCarousel {
   prevSlider() {
     if (this.options.infinity || this.options.position > 0) {
       --this.options.position;
+
       if (this.options.position < 0) {
         this.options.position = this.options.maxPosition;
       }
       this.wrap.style.transform = `translateX(-${
         this.options.position * this.options.widthSlide
       }%)`;
+      if (this.pagination) {
+        this.sliderPaginationChange();
+      }
     }
   }
 
@@ -129,12 +140,17 @@ class SliderCarousel {
       this.options.position < this.slides.length - this.slidesToShow
     ) {
       ++this.options.position;
+
       if (this.options.position > this.options.maxPosition) {
         this.options.position = 0;
       }
       this.wrap.style.transform = `translateX(-${
         this.options.position * this.options.widthSlide
       }%)`;
+
+      if (this.pagination) {
+        this.sliderPaginationChange();
+      }
     }
   }
 
@@ -170,6 +186,40 @@ class SliderCarousel {
         }
     `;
     document.head.append(style);
+  }
+
+  addPagination() {
+    const currentPaginationItem = document.getElementById(
+      `${this.main.classList[0]}-counter`
+    );
+    if (currentPaginationItem) {
+      return;
+    }
+    const sliderPagination = document.createElement("div");
+    sliderPagination.classList.add("slider-counter");
+    //sliderPagination.classList.add("slider-counter-responsive");
+    sliderPagination.id = `${this.main.classList[0]}-counter`;
+    sliderPagination.innerHTML = `    
+      <div class="slider-counter-content">
+        <div class="slider-counter-content__current">
+          1
+        </div>
+        <div class="slider-counter-content__total">${this.slides.length}</div>
+      </div>    
+    `;
+    if (this.paginationStyle === "dark") {
+      sliderPagination.classList.add("slider-counter_dark");
+    }
+    this.main.append(sliderPagination);
+  }
+
+  sliderPaginationChange() {
+    const currentPaginationItem = document.getElementById(
+      `${this.main.classList[0]}-counter`
+    );
+    currentPaginationItem.querySelector(
+      ".slider-counter-content__current"
+    ).innerHTML = this.options.position + 1;
   }
 }
 
