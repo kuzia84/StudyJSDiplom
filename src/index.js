@@ -94,42 +94,53 @@ const partners = new SliderCarousel({
   infinity: true,
   responsive: [
     {
-      breakpoint: 480,
+      breakpoint: 768,
+      slidesToShow: 2,
+    },
+    {
+      breakpoint: 576,
       slidesToShow: 1,
     },
   ],
 });
 partners.init();
-if (document.documentElement.clientWidth < 1025) {
-  const problemsSlider = new SliderCarousel({
-    main: ".problems-slider-wrap",
-    wrap: ".problems-slider",
-    prev: "#problems-arrow_left",
-    next: "#problems-arrow_right",
-    slidesToShow: 1,
-    infinity: true,
-  });
-  problemsSlider.init();
-  const tooltipSlider = new SliderCarousel({
-    main: ".formula-slider-wrap",
-    wrap: ".formula-slider",
-    prev: "#formula-arrow_left",
-    next: "#formula-arrow_right",
-    slidesToShow: 1,
-    infinity: true,
-  });
-  tooltipSlider.init();
-  const repairSliderNav = new SliderCarousel({
-    main: ".repair-types-nav",
-    wrap: ".nav-list-repair",
-    prev: "#nav-arrow-repair-left_base",
-    next: "#nav-arrow-repair-right_base",
-    slidesToShow: 1,
-    infinity: true,
-    adaptiveWidth: true,
-  });
-  repairSliderNav.init();
-}
+
+window.addEventListener("resize", () => {
+  if (document.documentElement.clientWidth < 1025) {
+    const problemsSlider = new SliderCarousel({
+      main: ".problems-slider-wrap",
+      wrap: ".problems-slider",
+      prev: "#problems-arrow_left",
+      next: "#problems-arrow_right",
+      slidesToShow: 1,
+      infinity: true,
+    });
+    problemsSlider.init();
+    const tooltipSlider = new SliderCarousel({
+      main: ".formula-slider-wrap",
+      wrap: ".formula-slider",
+      prev: "#formula-arrow_left",
+      next: "#formula-arrow_right",
+      slidesToShow: 1,
+      infinity: true,
+    });
+    tooltipSlider.init();
+    const repairSliderNav = new SliderCarousel({
+      main: ".repair-types-nav",
+      wrap: ".nav-list-repair",
+      prev: "#nav-arrow-repair-left_base",
+      next: "#nav-arrow-repair-right_base",
+      slidesToShow: 1,
+      infinity: true,
+      adaptiveWidth: true,
+    });
+    repairSliderNav.init();
+  }
+
+  partners.responsInit();
+  docsSlider.responsInit();
+  portfolioSliderDesctop.responsInit();
+});
 
 repairSlider();
 const repairSlider1 = new SliderCarousel({
