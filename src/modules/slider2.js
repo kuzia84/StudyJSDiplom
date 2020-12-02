@@ -9,7 +9,9 @@ class SliderCarousel {
     slidesToShow = 3,
     pagination = false,
     paginationStyle = "white",
+    paginationResponsive = false,
     responsive = [],
+    adaptiveWidth = false,
   }) {
     if (!main || !wrap) {
       console.warn('slider-carousel: Необходима 2 свойства, "main" и "wrap"!');
@@ -29,6 +31,8 @@ class SliderCarousel {
     this.responsive = responsive;
     this.pagination = pagination;
     this.paginationStyle = paginationStyle;
+    this.paginationResponsive = paginationResponsive;
+    this.adaptiveWidth = adaptiveWidth;
   }
 
   init() {
@@ -76,7 +80,7 @@ class SliderCarousel {
     };
     checkResponse();
 
-    window.addEventListener("resize", this.responsInit.bind(this));
+    //window.addEventListener("resize", this.responsInit.bind(this));
   }
 
   addGloClass() {
@@ -106,8 +110,8 @@ class SliderCarousel {
           will-change: transform;
       }
       .${this.main.classList[0]} .glo-slider__item {
-          flex: 0 0 ${this.options.widthSlide}%;
-          margin: auto 0;
+          flex: 0 0 ${this.adaptiveWidth ? "auto" : this.options.widthSlide}%;
+          margin: 0 auto;
       }
     `;
     document.head.append(style);
@@ -125,11 +129,26 @@ class SliderCarousel {
       if (this.options.position < 0) {
         this.options.position = this.options.maxPosition;
       }
-      this.wrap.style.transform = `translateX(-${
-        this.options.position * this.options.widthSlide
-      }%)`;
+      if (this.adaptiveWidth) {
+        this.wrap.style.transform = `translateX(-${
+          (100 / this.options.maxPosition) * (this.options.position / 2)
+        }%)`;
+      } else {
+        this.wrap.style.transform = `translateX(-${
+          this.options.position * this.options.widthSlide
+        }%)`;
+      }
+
+      this.addActiveClass();
+
       if (this.pagination) {
         this.sliderPaginationChange();
+      }
+    }
+    if (this.options.infinity === false) {
+      this.next.style.display = "flex";
+      if (this.options.position === 0) {
+        this.prev.style.display = "none";
       }
     }
   }
@@ -144,12 +163,38 @@ class SliderCarousel {
       if (this.options.position > this.options.maxPosition) {
         this.options.position = 0;
       }
-      this.wrap.style.transform = `translateX(-${
-        this.options.position * this.options.widthSlide
-      }%)`;
+
+      if (this.adaptiveWidth) {
+        this.wrap.style.transform = `translateX(-${
+          (100 / this.options.maxPosition) * (this.options.position / 2)
+        }%)`;
+      } else {
+        this.wrap.style.transform = `translateX(-${
+          this.options.position * this.options.widthSlide
+        }%)`;
+      }
+
+      this.addActiveClass();
 
       if (this.pagination) {
         this.sliderPaginationChange();
+      }
+    }
+    if (this.options.infinity === false) {
+      this.prev.style.display = "flex";
+      if (this.options.position === this.slides.length - this.slidesToShow) {
+        this.next.style.display = "none";
+      }
+    }
+  }
+
+  addActiveClass() {
+    for (let i = 0; i < this.slides.length; i++) {
+      const element = this.slides[i];
+      element.classList.remove("active-item");
+
+      if (i === this.options.position) {
+        element.classList.add("active-item");
       }
     }
   }
@@ -158,8 +203,11 @@ class SliderCarousel {
     this.prev = document.createElement("button");
     this.next = document.createElement("button");
 
-    this.prev.className = "glo-slider__prev";
-    this.next.className = "glo-slider__next";
+    this.prev.className = "slider-arrow slider-arrow_left";
+    this.next.className = "slider-arrow slider-arrow_right";
+
+    this.prev.id = `.${this.main.classList[0]}-arrow_left`;
+    this.next.id = `.${this.main.classList[0]}-arrow_right`;
 
     this.main.append(this.prev);
     this.main.append(this.next);
@@ -197,7 +245,11 @@ class SliderCarousel {
     }
     const sliderPagination = document.createElement("div");
     sliderPagination.classList.add("slider-counter");
-    //sliderPagination.classList.add("slider-counter-responsive");
+
+    if (this.paginationResponsive) {
+      sliderPagination.classList.add("slider-counter-responsive");
+    }
+
     sliderPagination.id = `${this.main.classList[0]}-counter`;
     sliderPagination.innerHTML = `    
       <div class="slider-counter-content">
