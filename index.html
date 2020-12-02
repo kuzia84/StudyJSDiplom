@@ -1516,8 +1516,8 @@
     <div class="wrapper">
       <div class="section-title scheme__title">Как мы работаем <span>над каждым нашим проектом</span></div>
       <div class="nav-wrap">
-        <nav class="nav">
-          <div class="nav-list" id="scheme-list">
+        <nav class="nav scheme-nav-slider">
+          <div class="nav-list scheme-nav-slider-wrapper" id="scheme-list">
             <button class="button_o scheme-nav__item switch active">
               <svg width="131" height="35" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -1583,48 +1583,64 @@
       </div><!-- /nav-wrap -->
       <div class="scheme-slider-wrap">
         <div class="scheme-slider">
-          <div class="scheme-slider__slide fade-tab"><img src="./images/scheme/slide1.jpg" alt=""></div><!-- /item1 -->
-          <div class="scheme-slider__slide fade-tab"><img src="./images/scheme/slide2.jpg" alt=""></div><!-- /item2 -->
-          <div class="scheme-slider__slide fade-tab"><img src="./images/scheme/slide3.jpg" alt=""></div><!-- /item3 -->
-          <div class="scheme-slider__slide fade-tab"><img src="./images/scheme/slide4.jpg" alt=""></div><!-- /item4 -->
-          <div class="scheme-slider__slide fade-tab"><img src="./images/scheme/slide2.jpg" alt=""></div><!-- /item5 -->
-          <div class="scheme-slider__slide fade-tab"><img src="./images/scheme/slide3.jpg" alt=""></div><!-- /item6 -->
-        </div>
-        <div class="scheme-description-block visible-content-block">
-          <div class="scheme-description-block__title">Консультация</div>
-          <p>Наша главная цель — прозрачность ремонтного процесса, чтобы дать Вам максимум информации и предложить
-            несколько вариантов дизайна и подстроиться под ваши предпочтения.</p>
-          <p>Вы получите:<br>Комплексный план реализации вашего проекта мечты с фиксированными условиями в договоре.</p>
-        </div>
-        <div class="scheme-description-block">
-          <div class="scheme-description-block__title">Плановый осмотр</div>
-          <p>Наш менеджер-прораб бесплатно выезжает на объект, производит точный замер помещения, составляет и
-            согласовывает в Вами смету на работу и материалы.</p>
-          <p>Вы получите:<br>Точную общую картину расходов и представления о бюджете будущего ремонта.</p>
-        </div>
-        <div class="scheme-description-block">
-          <div class="scheme-description-block__title">Заключения договора</div>
-          <p>Подписываем с Вами договор и согласованную смету.</p>
-          <p>Вы получите:<br>Официальный документ, который обязует соблюдать все прописанные условия, включая такие как:
-            точные сроки, конечная стоимость и все необходимые стандартные нормы.</p>
-        </div>
-        <div class="scheme-description-block">
-          <div class="scheme-description-block__title">Осуществления ремонта</div>
-          <p>Мы закупаем все материалы (можете сами) и доставляем на объект, после приступаем к ремонтным работам и
-            подписываем акты скрытых и выполненных работ по этапам</p>
-          <p>Вы получите:<br>Полный прозрачный обзор действий нашей компании подкрепленными официальными документами.
-          </p>
-        </div>
-        <div class="scheme-description-block">
-          <div class="scheme-description-block__title">3-X уровневая проверка</div>
-          <p>Каждый наш проект проходит 3-x уровневую систему контроля качества: прораб, инженер по контролю качества и
-            директор по строительству.</p>
-          <p>Вы получите:<br>Чистый готовый к эксплуатации ваш жилой проект.</p>
-        </div>
-        <div class="scheme-description-block">
-          <div class="scheme-description-block__title">Сдача проекта</div>
-          <p>Убираем за собой и передаем Вам ключи, подписываем акт выполненных работ КС-2, КС-3.</p>
-          <p>Вы получите:<br>Чистый готовый и готовый к эксплуатации ваш жилой проект.</p>
+          <div class="scheme-slider__slide fade-tab active">
+            <img src="./images/scheme/slide1.jpg" alt="">
+            <div class="scheme-description-block">
+              <div class="scheme-description-block__title">Консультация</div>
+              <p>Наша главная цель — прозрачность ремонтного процесса, чтобы дать Вам максимум информации и предложить
+                несколько вариантов дизайна и подстроиться под ваши предпочтения.</p>
+              <p>Вы получите:<br>Комплексный план реализации вашего проекта мечты с фиксированными условиями в договоре.
+              </p>
+            </div>
+          </div><!-- /item1 -->
+          <div class="scheme-slider__slide fade-tab">
+            <img src="./images/scheme/slide2.jpg" alt="">
+            <div class="scheme-description-block">
+              <div class="scheme-description-block__title">Плановый осмотр</div>
+              <p>Наш менеджер-прораб бесплатно выезжает на объект, производит точный замер помещения, составляет и
+                согласовывает в Вами смету на работу и материалы.</p>
+              <p>Вы получите:<br>Точную общую картину расходов и представления о бюджете будущего ремонта.</p>
+            </div>
+          </div><!-- /item2 -->
+          <div class="scheme-slider__slide fade-tab">
+            <img src="./images/scheme/slide3.jpg" alt="">
+            <div class="scheme-description-block">
+              <div class="scheme-description-block__title">Заключения договора</div>
+              <p>Подписываем с Вами договор и согласованную смету.</p>
+              <p>Вы получите:<br>Официальный документ, который обязует соблюдать все прописанные условия, включая такие
+                как:
+                точные сроки, конечная стоимость и все необходимые стандартные нормы.</p>
+            </div>
+          </div><!-- /item3 -->
+          <div class="scheme-slider__slide fade-tab">
+            <img src="./images/scheme/slide4.jpg" alt="">
+            <div class="scheme-description-block">
+              <div class="scheme-description-block__title">Осуществления ремонта</div>
+              <p>Мы закупаем все материалы (можете сами) и доставляем на объект, после приступаем к ремонтным работам и
+                подписываем акты скрытых и выполненных работ по этапам</p>
+              <p>Вы получите:<br>Полный прозрачный обзор действий нашей компании подкрепленными официальными
+                документами.
+              </p>
+            </div>
+          </div><!-- /item4 -->
+          <div class="scheme-slider__slide fade-tab">
+            <img src="./images/scheme/slide2.jpg" alt="">
+            <div class="scheme-description-block">
+              <div class="scheme-description-block__title">3-X уровневая проверка</div>
+              <p>Каждый наш проект проходит 3-x уровневую систему контроля качества: прораб, инженер по контролю
+                качества и
+                директор по строительству.</p>
+              <p>Вы получите:<br>Чистый готовый к эксплуатации ваш жилой проект.</p>
+            </div>
+          </div><!-- /item5 -->
+          <div class="scheme-slider__slide fade-tab">
+            <img src="./images/scheme/slide3.jpg" alt="">
+            <div class="scheme-description-block">
+              <div class="scheme-description-block__title">Сдача проекта</div>
+              <p>Убираем за собой и передаем Вам ключи, подписываем акт выполненных работ КС-2, КС-3.</p>
+              <p>Вы получите:<br>Чистый готовый и готовый к эксплуатации ваш жилой проект.</p>
+            </div>
+          </div><!-- /item6 -->
         </div>
       </div><!-- scheme-slider-wrap -->
     </div>

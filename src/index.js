@@ -104,39 +104,53 @@ const partners = new SliderCarousel({
   ],
 });
 partners.init();
-
+const problemsSlider = new SliderCarousel({
+  main: ".problems-slider-wrap",
+  wrap: ".problems-slider",
+  prev: "#problems-arrow_left",
+  next: "#problems-arrow_right",
+  slidesToShow: 1,
+  infinity: true,
+});
+const tooltipSlider = new SliderCarousel({
+  main: ".formula-slider-wrap",
+  wrap: ".formula-slider",
+  prev: "#formula-arrow_left",
+  next: "#formula-arrow_right",
+  slidesToShow: 1,
+  infinity: true,
+});
+const repairSliderNav = new SliderCarousel({
+  main: ".repair-types-nav",
+  wrap: ".nav-list-repair",
+  prev: "#nav-arrow-repair-left_base",
+  next: "#nav-arrow-repair-right_base",
+  slidesToShow: 1,
+  infinity: true,
+  adaptiveWidth: true,
+});
+const tabSliderNav = new SliderCarousel({
+  main: ".scheme-nav-slider",
+  wrap: ".scheme-nav-slider-wrapper",
+  prev: "#nav-arrow-scheme_left",
+  next: "#nav-arrow-scheme_right",
+  slidesToShow: 1,
+  infinity: true,
+  adaptiveWidth: true,
+});
+if (document.documentElement.clientWidth < 1025) {
+  problemsSlider.init();
+  tooltipSlider.init();
+  repairSliderNav.init();
+  tabSliderNav.init();
+}
 window.addEventListener("resize", () => {
   if (document.documentElement.clientWidth < 1025) {
-    const problemsSlider = new SliderCarousel({
-      main: ".problems-slider-wrap",
-      wrap: ".problems-slider",
-      prev: "#problems-arrow_left",
-      next: "#problems-arrow_right",
-      slidesToShow: 1,
-      infinity: true,
-    });
     problemsSlider.init();
-    const tooltipSlider = new SliderCarousel({
-      main: ".formula-slider-wrap",
-      wrap: ".formula-slider",
-      prev: "#formula-arrow_left",
-      next: "#formula-arrow_right",
-      slidesToShow: 1,
-      infinity: true,
-    });
     tooltipSlider.init();
-    const repairSliderNav = new SliderCarousel({
-      main: ".repair-types-nav",
-      wrap: ".nav-list-repair",
-      prev: "#nav-arrow-repair-left_base",
-      next: "#nav-arrow-repair-right_base",
-      slidesToShow: 1,
-      infinity: true,
-      adaptiveWidth: true,
-    });
     repairSliderNav.init();
+    tabSliderNav.init();
   }
-
   partners.responsInit();
   docsSlider.responsInit();
   portfolioSliderDesctop.responsInit();
@@ -211,7 +225,6 @@ portfolioSliderMob.init();
 const portfolioSliderPopupToggler = document.querySelectorAll(
   ".portfolio-slider__toggler"
 );
-console.log(portfolioSliderPopupToggler);
 for (let i = 0; i < portfolioSliderPopupToggler.length; i++) {
   portfolioSliderPopupToggler[i].addEventListener("click", () => {
     const portfolioSliderPopup = new SliderCarousel({
@@ -229,6 +242,9 @@ for (let i = 0; i < portfolioSliderPopupToggler.length; i++) {
     portfolioSliderPopup.nextSlider();
   });
 }
+//Tabs
+tabs();
+
 /*
 //Send ajax from
 sendForm("feedback1");
@@ -237,7 +253,6 @@ sendForm("feedback3");
 sendForm("feedback4");
 sendForm("feedback5");
 sendForm("feedback6");
-//Tabs
-tabs();
+
 
 */

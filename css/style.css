@@ -1553,7 +1553,7 @@ template,
   .repair-types-nav__item {
     height: 33px;
     line-height: 33px;
-    font-size: 14px;
+    font-size: 14px !important;
     margin-top: 0;
   }
   .repair-types-nav__item svg {
@@ -4024,7 +4024,7 @@ div.wave-block:nth-child(17):after {
 .scheme-nav__item {
   height: 35px;
   line-height: 35px;
-  font-size: 14px;
+  font-size: 14px !important;
 }
 .scheme-nav__item:nth-child(1) {
   min-width: 131px;
@@ -4054,23 +4054,43 @@ div.wave-block:nth-child(17):after {
 @media (max-width: 1024px) {
   .scheme-slider {
     height: 429px;
+    overflow: visible !important;
+    background: none;
+  }
+  .scheme-slider__slide {
+    height: 429px;
+    overflow: visible !important;
+  }
+  .scheme-slider__slide img {
+    object-fit: cover;
+    max-width: 100%;
+    border-radius: 20px;
   }
 }
 @media (max-width: 575px) {
   .scheme-slider {
-    height: 184px;
+    height: auto;
   }
 }
 .scheme-slider-wrap {
   position: relative;
 }
 .scheme-slider__slide {
-  position: relative;
+  position: absolute;
   overflow: hidden;
+  opacity: 0;
+  top: 0;
+  z-index: 0;
+  transition: 0.5s;
+}
+.scheme-slider__slide.active {
+  position: relative;
+  opacity: 1;
+  z-index: 1;
 }
 @media (max-width: 575px) {
   .scheme-slider__slide {
-    height: 184px;
+    height: auto;
   }
 }
 .scheme-slider__slide img {
@@ -4080,7 +4100,7 @@ div.wave-block:nth-child(17):after {
   position: absolute;
   bottom: 15px;
   right: 15px;
-  display: none;
+  /* display: none; */
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
