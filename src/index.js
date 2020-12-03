@@ -19,6 +19,8 @@ import tabs from "./modules/tabs";
 import slider from "./modules/slider";
 import SliderCarousel from "./modules/slider2";
 import repairSlider from "./modules/repairSlider";
+import designTabs from "./modules/designTabs";
+import popupDesign from "./modules/popupDesign";
 import sendForm from "./modules/sendForm";
 
 //Header Phones
@@ -111,6 +113,7 @@ const problemsSlider = new SliderCarousel({
   next: "#problems-arrow_right",
   slidesToShow: 1,
   infinity: true,
+  addClassActive: true,
 });
 const tooltipSlider = new SliderCarousel({
   main: ".formula-slider-wrap",
@@ -119,6 +122,7 @@ const tooltipSlider = new SliderCarousel({
   next: "#formula-arrow_right",
   slidesToShow: 1,
   infinity: true,
+  addClassActive: true,
 });
 const repairSliderNav = new SliderCarousel({
   main: ".repair-types-nav",
@@ -137,23 +141,6 @@ const tabSliderNav = new SliderCarousel({
   slidesToShow: 1,
   infinity: true,
   adaptiveWidth: true,
-});
-if (document.documentElement.clientWidth < 1025) {
-  problemsSlider.init();
-  tooltipSlider.init();
-  repairSliderNav.init();
-  tabSliderNav.init();
-}
-window.addEventListener("resize", () => {
-  if (document.documentElement.clientWidth < 1025) {
-    problemsSlider.init();
-    tooltipSlider.init();
-    repairSliderNav.init();
-    tabSliderNav.init();
-  }
-  partners.responsInit();
-  docsSlider.responsInit();
-  portfolioSliderDesctop.responsInit();
 });
 
 repairSlider();
@@ -245,6 +232,100 @@ for (let i = 0; i < portfolioSliderPopupToggler.length; i++) {
 //Tabs
 tabs();
 
+const popupDesignSlider1 = new SliderCarousel({
+  main: ".popup-designs-slider__style1",
+  wrap: ".popup-designs-slider__style1-wrapper",
+  prev: "#popup_design_left1",
+  next: "#popup_design_right1",
+  slidesToShow: 1,
+  pagination: true,
+  paginationResponsive: true,
+});
+popupDesignSlider1.init();
+
+const popupDesignSlider2 = new SliderCarousel({
+  main: ".popup-designs-slider__style2",
+  wrap: ".popup-designs-slider__style2-wrapper",
+  prev: "#popup_design_left2",
+  next: "#popup_design_right2",
+  slidesToShow: 1,
+  pagination: true,
+  paginationResponsive: true,
+});
+popupDesignSlider2.init();
+
+const popupDesignSlider3 = new SliderCarousel({
+  main: ".popup-designs-slider__style3",
+  wrap: ".popup-designs-slider__style3-wrapper",
+  prev: "#popup_design_left3",
+  next: "#popup_design_right3",
+  slidesToShow: 1,
+  pagination: true,
+  paginationResponsive: true,
+});
+popupDesignSlider3.init();
+
+const popupDesignSlider4 = new SliderCarousel({
+  main: ".popup-designs-slider__style4",
+  wrap: ".popup-designs-slider__style4-wrapper",
+  prev: "#popup_design_left4",
+  next: "#popup_design_right4",
+  slidesToShow: 1,
+  pagination: true,
+  paginationResponsive: true,
+});
+popupDesignSlider4.init();
+
+const popupDesignSlider5 = new SliderCarousel({
+  main: ".popup-designs-slider__style5",
+  wrap: ".popup-designs-slider__style5-wrapper",
+  prev: "#popup_design_left5",
+  next: "#popup_design_right5",
+  slidesToShow: 1,
+  pagination: true,
+  paginationResponsive: true,
+});
+popupDesignSlider5.init();
+
+popupDesign();
+
+const popupDesignNav = new SliderCarousel({
+  main: "#nav-list-popup",
+  wrap: "#nav-list-popup-designs",
+  prev: "#nav-arrow-popup-designs_left",
+  next: "#nav-arrow-popup-designs_right",
+  slidesToShow: 1,
+  infinity: true,
+  adaptiveWidth: true,
+});
+
+const designNav = new SliderCarousel({
+  main: "#designs-list-container",
+  wrap: "#designs-list",
+  prev: "#nav-arrow-designs_left",
+  next: "#nav-arrow-designs_right",
+  slidesToShow: 1,
+  infinity: true,
+  adaptiveWidth: true,
+});
+designTabs();
+slider(".designs-slider__style1", ".scand", ".scand-preview-block", ".scand");
+slider(".designs-slider__style2", ".trad", ".trad-preview-block", ".trad");
+slider(".designs-slider__style3", ".loft", ".loft-preview-block", ".loft");
+slider(
+  ".designs-slider__style4",
+  ".minimal",
+  ".minimal-preview-block",
+  ".minimal"
+);
+slider(
+  ".designs-slider__style5",
+  ".modern",
+  ".modern-preview-block",
+  ".modern"
+);
+//список цен и услуг
+slider(".designs-slider__style3", ".loft", ".loft-preview-block", ".loft");
 /*
 //Send ajax from
 sendForm("feedback1");
@@ -256,3 +337,24 @@ sendForm("feedback6");
 
 
 */
+if (document.documentElement.clientWidth < 1025) {
+  problemsSlider.init();
+  tooltipSlider.init();
+  repairSliderNav.init();
+  tabSliderNav.init();
+  popupDesignNav.init();
+  designNav.init();
+}
+window.addEventListener("resize", () => {
+  if (document.documentElement.clientWidth < 1025) {
+    problemsSlider.init();
+    tooltipSlider.init();
+    repairSliderNav.init();
+    tabSliderNav.init();
+    popupDesignNav.init();
+    designNav.init();
+  }
+  partners.responsInit();
+  docsSlider.responsInit();
+  portfolioSliderDesctop.responsInit();
+});

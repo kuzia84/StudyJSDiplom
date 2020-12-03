@@ -1159,9 +1159,9 @@
       <div class="section-title designs-title">Современные и удобные <span>дизайнерские решения</span></div>
       <div class="section-subtitle">Какой стиль Вам больше импонирует или мы сделаем уникальный?</div>
       <div class="nav-wrap">
-        <nav class="nav nav-designs">
+        <nav class="nav nav-designs" id="designs-list-container">
           <div class="nav-list nav-list-designs" id="designs-list">
-            <button class="button_o designs-nav__item designs-nav__item_base active">
+            <button class="button_o designs-nav__item designs-nav__item_base active" data-designbtn="1">
               <svg width="210" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 40"
                 preserveAspectRatio="xMinYMin meet">
                 <path
@@ -1170,7 +1170,7 @@
               </svg>
               Скандинавский стиль
             </button>
-            <button class="button_o designs-nav__item designs-nav__item_base">
+            <button class="button_o designs-nav__item designs-nav__item_base" data-designbtn="2">
               <svg width="206" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206 40"
                 preserveAspectRatio="xMinYMin meet">
                 <path
@@ -1179,7 +1179,7 @@
               </svg>
               Традиционный стиль
             </button>
-            <button class="button_o designs-nav__item designs-nav__item_base">
+            <button class="button_o designs-nav__item designs-nav__item_base" data-designbtn="3">
               <svg width="129" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 40"
                 preserveAspectRatio="xMinYMin meet">
                 <path
@@ -1188,7 +1188,7 @@
               </svg>
               Лофт стиль
             </button>
-            <button class="button_o designs-nav__item designs-nav__item_base">
+            <button class="button_o designs-nav__item designs-nav__item_base" data-designbtn="4">
               <svg width="251" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 40"
                 preserveAspectRatio="xMinYMin meet">
                 <path
@@ -1197,7 +1197,7 @@
               </svg>
               Минималистический стиль
             </button>
-            <button class="button_o designs-nav__item designs-nav__item_base">
+            <button class="button_o designs-nav__item designs-nav__item_base" data-designbtn="5">
               <svg width="198" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198 40"
                 preserveAspectRatio="xMinYMin meet">
                 <path
@@ -1223,28 +1223,33 @@
       </div><!-- /design-nav-wrap -->
       <div class="designs-slider-wrap">
         <div class="designs-slider">
-          <div class="designs-slider__style1">
-            <div class="designs-slider__style-slide scand"><img src="./images/designs/item1.jpg" alt=""></div>
+          <div class="designs-slider__style1 designs-slider__container active" data-designslider="1">
+            <div class="designs-slider__style-slide scand slide-active"><img src="./images/designs/item1.jpg" alt="">
+            </div>
             <div class="designs-slider__style-slide scand"><img src="./images/designs/item2.jpg" alt=""></div>
             <div class="designs-slider__style-slide scand"><img src="./images/designs/item3.jpg" alt=""></div>
           </div><!-- /slide-style scand-->
-          <div class="designs-slider__style2">
-            <div class="designs-slider__style-slide trad"><img src="./images/designs/trad_item1.jpg" alt=""></div>
+          <div class="designs-slider__style2 designs-slider__container" data-designslider="2">
+            <div class="designs-slider__style-slide trad slide-active"><img src="./images/designs/trad_item1.jpg"
+                alt=""></div>
             <div class="designs-slider__style-slide trad"><img src="./images/designs/trad_item2.jpg" alt=""></div>
           </div><!-- /slide-style traditional-->
-          <div class="designs-slider__style3">
-            <div class="designs-slider__style-slide loft"><img src="./images/designs/loft1.jpg" alt=""></div>
+          <div class="designs-slider__style3 designs-slider__container" data-designslider="3">
+            <div class="designs-slider__style-slide loft slide-active"><img src="./images/designs/loft1.jpg" alt="">
+            </div>
             <div class="designs-slider__style-slide loft"><img src="./images/designs/loft2.jpg" alt=""></div>
             <div class="designs-slider__style-slide loft"><img src="./images/designs/loft3.jpg" alt=""></div>
             <div class="designs-slider__style-slide loft"><img src="./images/designs/loft4.jpg" alt=""></div>
           </div><!-- /slide-style loft-->
-          <div class="designs-slider__style4">
-            <div class="designs-slider__style-slide minimal"><img src="./images/designs/item2.jpg" alt=""></div>
+          <div class="designs-slider__style4 designs-slider__container" data-designslider="4">
+            <div class="designs-slider__style-slide minimal slide-active"><img src="./images/designs/item2.jpg" alt="">
+            </div>
             <div class="designs-slider__style-slide minimal"><img src="./images/designs/item1.jpg" alt=""></div>
             <div class="designs-slider__style-slide minimal"><img src="./images/designs/item2.jpg" alt=""></div>
           </div><!-- /slide-style minimal-->
-          <div class="designs-slider__style5">
-            <div class="designs-slider__style-slide modern"><img src="./images/designs/item1.jpg" alt=""></div>
+          <div class="designs-slider__style5 designs-slider__container" data-designslider="5">
+            <div class="designs-slider__style-slide modern slide-active"><img src="./images/designs/item1.jpg" alt="">
+            </div>
             <div class="designs-slider__style-slide modern"><img src="./images/designs/item2.jpg" alt=""></div>
             <div class="designs-slider__style-slide modern"><img src="./images/designs/item1.jpg" alt=""></div>
           </div><!-- /slide-style modern-->
@@ -1270,21 +1275,21 @@
           </svg>
         </div>
       </div><!-- /designs-slider-wrap -->
-      <div class="preview-block visible">
-        <div class="preview-block__item">
+      <div class="preview-block visible scand-preview-block" data-designpreview="1">
+        <div class="preview-block__item scand-preview">
           <div class="preview-block__item-inner scand preview_active">Интерьер 1</div>
           <img src="./images/designs/item1_preview.jpg" alt="">
         </div>
-        <div class="preview-block__item scand">
+        <div class="preview-block__item scand-preview">
           <div class="preview-block__item-inner scand">Интерьер 2</div>
           <img src="./images/designs/item2_preview.jpg" alt="">
         </div>
-        <div class="preview-block__item">
+        <div class="preview-block__item scand-preview">
           <div class="preview-block__item-inner scand">Интерьер 3</div>
           <img src="./images/designs/item3_preview.jpg" alt="">
         </div>
       </div><!-- preview scand -->
-      <div class="preview-block">
+      <div class="preview-block trad-preview-block" data-designpreview="2">
         <div class="preview-block__item">
           <div class="preview-block__item-inner trad preview_active">Интерьер 1</div>
           <img src="./images/designs/trad_item1_preview.jpg" alt="">
@@ -1294,7 +1299,7 @@
           <img src="./images/designs/trad_item2_preview.jpg" alt="">
         </div>
       </div><!-- preview trad -->
-      <div class="preview-block">
+      <div class="preview-block loft-preview-block" data-designpreview="3">
         <div class="preview-block__item">
           <div class="preview-block__item-inner loft preview_active">Интерьер 1</div>
           <img src="./images/designs/loft1_preview.jpg" alt="">
@@ -1312,7 +1317,7 @@
           <img src="./images/designs/loft4_preview.jpg" alt="">
         </div>
       </div><!-- preview loft -->
-      <div class="preview-block minimal">
+      <div class="preview-block minimal-preview-block" data-designpreview="4">
         <div class="preview-block__item">
           <div class="preview-block__item-inner minimal preview_active">Интерьер 1</div>
           <img src="./images/designs/item1_prevew.jpg" alt="">
@@ -1326,7 +1331,7 @@
           <img src="./images/designs/item1_prevew.jpg" alt="">
         </div>
       </div><!-- preview minimal -->
-      <div class="preview-block modern">
+      <div class="preview-block modern-preview-block" data-designpreview="5">
         <div class="preview-block__item">
           <div class="preview-block__item-inner modern preview_active">Интерьер 1</div>
           <img src="./images/designs/item1_prevew.jpg" alt="">
@@ -1340,7 +1345,7 @@
           <img src="./images/designs/item1_prevew.jpg" alt="">
         </div>
       </div><!-- preview modern -->
-      <div class="link-list-designs"><a>Посмотреть описание работ
+      <div class="link-list-designs"><a href="#popup-design" data-toggle="modal">Посмотреть описание работ
           <svg width="13" height="11" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M12.308 5.82a.716.716 0 0 0 0-1.012L7.754.253A.716.716 0 0 0 6.74 1.266l4.05 4.048-4.05 4.05a.716.716 0 1 0 1.013 1.011l4.554-4.554zm-11.6.21h11.094V4.6H.708V6.03z"
@@ -3042,9 +3047,9 @@
     </div>
     <div class="popup-dialog popup-dialog-design">
       <div class="nav-wrap">
-        <nav class="nav nav-designs nav-popup">
+        <nav class="nav nav-designs nav-popup" id="nav-list-popup">
           <div class="nav-list nav-list-designs transparancy-cut" id="nav-list-popup-designs">
-            <button class="button_o designs-nav__item designs-nav__item_popup active">
+            <button class="button_o designs-nav__item designs-nav__item_popup active" data-popupdesignbtn="1">
               <svg width="210" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 40"
                 preserveAspectRatio="xMinYMin meet">
                 <path
@@ -3053,7 +3058,7 @@
               </svg>
               Скандинавский стиль
             </button>
-            <button class="button_o designs-nav__item designs-nav__item_popup">
+            <button class="button_o designs-nav__item designs-nav__item_popup" data-popupdesignbtn="2">
               <svg width="206" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206 40"
                 preserveAspectRatio="xMinYMin meet">
                 <path
@@ -3062,7 +3067,7 @@
               </svg>
               Традиционный стиль
             </button>
-            <button class="button_o designs-nav__item designs-nav__item_popup">
+            <button class="button_o designs-nav__item designs-nav__item_popup" data-popupdesignbtn="3">
               <svg width="129" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 40"
                 preserveAspectRatio="xMinYMin meet">
                 <path
@@ -3071,7 +3076,7 @@
               </svg>
               Лофт стиль
             </button>
-            <button class="button_o designs-nav__item designs-nav__item_popup">
+            <button class="button_o designs-nav__item designs-nav__item_popup" data-popupdesignbtn="4">
               <svg width="251" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251 40"
                 preserveAspectRatio="xMinYMin meet">
                 <path
@@ -3080,7 +3085,7 @@
               </svg>
               Минималистический стиль
             </button>
-            <button class="button_o designs-nav__item designs-nav__item_popup">
+            <button class="button_o designs-nav__item designs-nav__item_popup" data-popupdesignbtn="5">
               <svg width="198" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198 40"
                 preserveAspectRatio="xMinYMin meet">
                 <path
@@ -3117,56 +3122,141 @@
               </svg>
             </div>
             <div class="popup-design-slider">
-              <div class="popup-designs-slider__style1">
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
+              <div class="popup-designs-slider__style1 popup-designs-slider__container active"
+                data-popupdesignslider="1">
+                <div class="popup-designs-slider__style1-wrapper">
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                </div>
+                <div class="popup-arrow popup-arrow_left" id="popup_design_left1">
+                  <svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 41.999l-28-20 28-20" stroke="#fff" stroke-opacity=".5" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+                <div class="popup-arrow popup-arrow_right" id="popup_design_right1">
+                  <svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 1.999l28 20-28 20" stroke="#fff" stroke-opacity=".5" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
               </div><!-- /slide-style scand-->
-              <div class="popup-designs-slider__style2">
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
+              <div class="popup-designs-slider__style2 popup-designs-slider__container" data-popupdesignslider="2">
+                <div class="popup-designs-slider__style2-wrapper">
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                </div>
+                <div class="popup-arrow popup-arrow_left" id="popup_design_left2">
+                  <svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 41.999l-28-20 28-20" stroke="#fff" stroke-opacity=".5" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+                <div class="popup-arrow popup-arrow_right" id="popup_design_right2">
+                  <svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 1.999l28 20-28 20" stroke="#fff" stroke-opacity=".5" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
               </div><!-- /slide-style scand-->
-              <div class="popup-designs-slider__style3">
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
+              <div class="popup-designs-slider__style3 popup-designs-slider__container" data-popupdesignslider="3">
+                <div class="popup-designs-slider__style3-wrapper">
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                </div>
+                <div class="popup-arrow popup-arrow_left" id="popup_design_left3">
+                  <svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 41.999l-28-20 28-20" stroke="#fff" stroke-opacity=".5" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+                <div class="popup-arrow popup-arrow_right" id="popup_design_right3">
+                  <svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 1.999l28 20-28 20" stroke="#fff" stroke-opacity=".5" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
               </div><!-- /slide-style scand-->
-              <div class="popup-designs-slider__style4">
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
+              <div class="popup-designs-slider__style4 popup-designs-slider__container" data-popupdesignslider="4">
+                <div class="popup-designs-slider__style4-wrapper">
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                </div>
+                <div class="popup-arrow popup-arrow_left" id="popup_design_left4">
+                  <svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 41.999l-28-20 28-20" stroke="#fff" stroke-opacity=".5" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+                <div class="popup-arrow popup-arrow_right" id="popup_design_right4">
+                  <svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 1.999l28 20-28 20" stroke="#fff" stroke-opacity=".5" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
               </div><!-- /slide-style scand-->
-              <div class="popup-designs-slider__style5">
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
+              <div class="popup-designs-slider__style5 popup-designs-slider__container" data-popupdesignslider="5">
+                <div class="popup-designs-slider__style5-wrapper">
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                  <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt="">
+                  </div>
+                </div>
+                <div class="popup-arrow popup-arrow_left" id="popup_design_left5">
+                  <svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 41.999l-28-20 28-20" stroke="#fff" stroke-opacity=".5" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+                <div class="popup-arrow popup-arrow_right" id="popup_design_right5">
+                  <svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 1.999l28 20-28 20" stroke="#fff" stroke-opacity=".5" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
               </div><!-- /slide-style scand-->
             </div><!-- /designs-slider -->
-            <div class="popup-arrow popup-arrow_left" id="popup_design_left">
-              <svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M30 41.999l-28-20 28-20" stroke="#fff" stroke-opacity=".5" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </div>
-            <div class="popup-arrow popup-arrow_right" id="popup_design_right">
-              <svg width="32" height="44" fill="none" viewBox="0 0 32 44" preserveAspectRatio="xMinYMin meet"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 1.999l28 20-28 20" stroke="#fff" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"
-                  stroke-linejoin="round"></path>
-              </svg>
-            </div>
-            <div class="slider-counter" id="popup-designs-counter">
+
+            <!-- <div class="slider-counter" id="popup-designs-counter">
               <div class="slider-counter-content">
                 <div class="slider-counter-content__current">1</div>
                 <div class="slider-counter-content__total">3</div>
               </div>
-            </div>
+            </div> -->
           </div>
-          <div class="popup-design-text visible-content-block">
+          <div class="popup-design-text visible-content-block" data-popupdesigntext="1">
             <div class="popup-design-text__title">Скандинавский стиль</div>
             <div class="popup-design-text__descr">
               <p>Скандинавский стиль один из лучших стилей современности, на данный
@@ -3180,7 +3270,7 @@
               <p>В отличие он минимализма, допускает</p>
             </div>
           </div><!-- /popup-design-text -->
-          <div class="popup-design-text">
+          <div class="popup-design-text" data-popupdesigntext="2">
             <div class="popup-design-text__title">Традиционный стиль</div>
             <div class="popup-design-text__descr">
               <p>Традиционный стиль один из лучших стилей современности, на данный
@@ -3194,7 +3284,7 @@
               <p>В отличие он минимализма, допускает</p>
             </div>
           </div><!-- /popup-design-text -->
-          <div class="popup-design-text">
+          <div class="popup-design-text" data-popupdesigntext="3">
             <div class="popup-design-text__title">Лофт стиль</div>
             <div class="popup-design-text__descr">
               <p>Лофт стиль один из лучших стилей современности, на данный момент этот
@@ -3207,7 +3297,7 @@
               <p>В отличие он минимализма, допускает</p>
             </div>
           </div><!-- /popup-design-text -->
-          <div class="popup-design-text">
+          <div class="popup-design-text" data-popupdesigntext="4">
             <div class="popup-design-text__title">Минималистический стиль</div>
             <div class="popup-design-text__descr">
               <p>Минималистический стиль один из лучших стилей современности, на
@@ -3219,7 +3309,7 @@
               <p>В отличие он минимализма, допускает</p>
             </div>
           </div><!-- /popup-design-text -->
-          <div class="popup-design-text">
+          <div class="popup-design-text" data-popupdesigntext="5">
             <div class="popup-design-text__title">Современный стиль</div>
             <div class="popup-design-text__descr">
               <p>Современный стиль один из лучших стилей современности, на данный

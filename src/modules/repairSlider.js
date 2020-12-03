@@ -24,7 +24,7 @@ const repairSlider = () => {
     if (target.matches(".repair-types-nav__item")) {
       removeActive();
       target.classList.add("active");
-      console.log("target: ", target.dataset.lnk);
+
       repairTypesInerSliders.forEach((element) => {
         if (target.dataset.lnk === element.dataset.slider) {
           element.style.display = "block";

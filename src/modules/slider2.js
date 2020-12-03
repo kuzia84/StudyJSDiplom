@@ -12,6 +12,7 @@ class SliderCarousel {
     paginationResponsive = false,
     responsive = [],
     adaptiveWidth = false,
+    addClassActive = false,
   }) {
     if (!main || !wrap) {
       console.warn('slider-carousel: Необходима 2 свойства, "main" и "wrap"!');
@@ -33,6 +34,7 @@ class SliderCarousel {
     this.paginationStyle = paginationStyle;
     this.paginationResponsive = paginationResponsive;
     this.adaptiveWidth = adaptiveWidth;
+    this.addClassActive = addClassActive;
   }
 
   init() {
@@ -139,7 +141,9 @@ class SliderCarousel {
         }%)`;
       }
 
-      this.addActiveClass();
+      if (this.addClassActive) {
+        this.addActiveClass();
+      }
 
       if (this.pagination) {
         this.sliderPaginationChange();
@@ -174,7 +178,9 @@ class SliderCarousel {
         }%)`;
       }
 
-      this.addActiveClass();
+      if (this.addClassActive) {
+        this.addActiveClass();
+      }
 
       if (this.pagination) {
         this.sliderPaginationChange();
