@@ -22,7 +22,20 @@ const sendForm = (formId) => {
       },
       body: JSON.stringify(body),
     });
-
+  const showThankModal = () => {
+    const thankModal = document.getElementById("popup-thank"),
+      closeBtn = thankModal.querySelectorAll(".close"),
+      modals = document.querySelectorAll(".popup");
+    modals.forEach((element) => {
+      element.style.visibility = "hidden";
+    });
+    thankModal.style.visibility = "visible";
+    closeBtn.forEach((element) => {
+      element.addEventListener("click", () => {
+        thankModal.style.visibility = "hidden";
+      });
+    });
+  };
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     form.insertAdjacentElement("afterend", statusMessage);
@@ -35,18 +48,16 @@ const sendForm = (formId) => {
     postData(body)
       .then((response) => {
         if (response.status !== 200) {
-          throw new Error("Network stattun not 200");
+          throw new Error("Network stattus not 200");
         }
-        statusMessage.textContent = successMessage;
+        statusMessage.innerHTML = "";
+        showThankModal();
       })
       .catch((error) => {
         statusMessage.textContent = errorMessage;
         console.error(error);
       });
     document.getElementById(formId).reset();
-    setTimeout(() => {
-      statusMessage.innerHTML = "";
-    }, 8000);
   });
 };
 

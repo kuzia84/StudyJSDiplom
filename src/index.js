@@ -21,6 +21,7 @@ import SliderCarousel from "./modules/slider2";
 import repairSlider from "./modules/repairSlider";
 import designTabs from "./modules/designTabs";
 import popupDesign from "./modules/popupDesign";
+import popupRepairTypesContent from "./modules/popupRepairTypesContent";
 import sendForm from "./modules/sendForm";
 
 //Header Phones
@@ -325,8 +326,14 @@ slider(
   ".modern"
 );
 //список цен и услуг
-slider(".designs-slider__style3", ".loft", ".loft-preview-block", ".loft");
-/*
+slider(
+  ".popup-repair-types-content-table",
+  ".popup-repair-types-content-table__list",
+  ".nav-list-popup-repair",
+  ".popup-repair-types-nav__item"
+);
+popupRepairTypesContent();
+
 //Send ajax from
 sendForm("feedback1");
 sendForm("feedback2");
@@ -335,8 +342,6 @@ sendForm("feedback4");
 sendForm("feedback5");
 sendForm("feedback6");
 
-
-*/
 if (document.documentElement.clientWidth < 1025) {
   problemsSlider.init();
   tooltipSlider.init();

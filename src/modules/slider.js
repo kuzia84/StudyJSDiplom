@@ -30,7 +30,6 @@ const slider = (sliderClass, slideClass, dotContainer, dotClass) => {
         }
       });
     }
-    console.log(currentSlide);
 
     nextSlide(slide, currentSlide, "slide-active");
     nextSlide(dot, currentSlide, "preview_active");
