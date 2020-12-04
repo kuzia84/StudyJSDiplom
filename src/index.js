@@ -310,20 +310,60 @@ const designNav = new SliderCarousel({
   adaptiveWidth: true,
 });
 designTabs();
-slider(".designs-slider__style1", ".scand", ".scand-preview-block", ".scand");
-slider(".designs-slider__style2", ".trad", ".trad-preview-block", ".trad");
-slider(".designs-slider__style3", ".loft", ".loft-preview-block", ".loft");
+slider(
+  ".designs-slider__style1",
+  ".scand",
+  ".scand-preview-block",
+  ".scand",
+  "#design_left1",
+  "#design_right1",
+  ".slider-arrow-tablet-mobile",
+  ".slider-counter-content__current",
+  ".slider-counter-content__total"
+);
+slider(
+  ".designs-slider__style2",
+  ".trad",
+  ".trad-preview-block",
+  ".trad",
+  "#design_left2",
+  "#design_right2",
+  ".slider-arrow-tablet-mobile",
+  ".slider-counter-content__current",
+  ".slider-counter-content__total"
+);
+slider(
+  ".designs-slider__style3",
+  ".loft",
+  ".loft-preview-block",
+  ".loft",
+  "#design_left3",
+  "#design_right3",
+  ".slider-arrow-tablet-mobile",
+  ".slider-counter-content__current",
+  ".slider-counter-content__total"
+);
 slider(
   ".designs-slider__style4",
   ".minimal",
   ".minimal-preview-block",
-  ".minimal"
+  ".minimal",
+  "#design_left4",
+  "#design_right4",
+  ".slider-arrow-tablet-mobile",
+  ".slider-counter-content__current",
+  ".slider-counter-content__total"
 );
 slider(
   ".designs-slider__style5",
   ".modern",
   ".modern-preview-block",
-  ".modern"
+  ".modern",
+  "#design_left5",
+  "#design_right5",
+  ".slider-arrow-tablet-mobile",
+  ".slider-counter-content__current",
+  ".slider-counter-content__total"
 );
 //список цен и услуг
 slider(
@@ -333,7 +373,15 @@ slider(
   ".popup-repair-types-nav__item"
 );
 popupRepairTypesContent();
-
+const popupRepairTypesNav = new SliderCarousel({
+  main: ".nav-popup-repair-types",
+  wrap: ".nav-list-popup-repair",
+  prev: "#nav-arrow-popup-repair_left",
+  next: "#nav-arrow-popup-repair_right",
+  slidesToShow: 1,
+  infinity: true,
+  adaptiveWidth: true,
+});
 //Send ajax from
 sendForm("feedback1");
 sendForm("feedback2");
@@ -349,6 +397,7 @@ if (document.documentElement.clientWidth < 1025) {
   tabSliderNav.init();
   popupDesignNav.init();
   designNav.init();
+  popupRepairTypesNav.init();
 }
 window.addEventListener("resize", () => {
   if (document.documentElement.clientWidth < 1025) {
@@ -358,8 +407,9 @@ window.addEventListener("resize", () => {
     tabSliderNav.init();
     popupDesignNav.init();
     designNav.init();
+    popupRepairTypesNav.init();
   }
-  partners.responsInit();
-  docsSlider.responsInit();
-  portfolioSliderDesctop.responsInit();
+  if (document.documentElement.clientWidth > 1024) {
+    popupRepairTypesNav.destroy();
+  }
 });

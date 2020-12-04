@@ -82,7 +82,15 @@ class SliderCarousel {
     };
     checkResponse();
 
-    //window.addEventListener("resize", this.responsInit.bind(this));
+    window.addEventListener("resize", checkResponse);
+  }
+
+  destroy() {
+    this.main.classList.remove("glo-slider");
+    this.wrap.classList.remove("glo-slider__wrap");
+    for (const item of this.slides) {
+      item.classList.remove("glo-slider__item");
+    }
   }
 
   addGloClass() {
@@ -107,12 +115,15 @@ class SliderCarousel {
       }
       .${this.main.classList[0]} .glo-slider__wrap {
           display: flex !important;
+          
           flex-wrap: nowrap;
           transition: transform 0.5s;
           will-change: transform;
       }
       .${this.main.classList[0]} .glo-slider__item {
-          flex: 0 0 ${this.adaptiveWidth ? "auto" : this.options.widthSlide}%;
+          flex: 0 0 ${
+            this.adaptiveWidth ? "auto" : this.options.widthSlide + "%"
+          };
           margin: 0 auto;
       }
     `;
