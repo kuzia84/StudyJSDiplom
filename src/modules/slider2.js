@@ -143,9 +143,14 @@ class SliderCarousel {
         this.options.position = this.options.maxPosition;
       }
       if (this.adaptiveWidth) {
+        // this.wrap.style.transform = `translateX(-${
+        //   (100 / this.options.maxPosition) * (this.options.position / 1.28)
+        // }%)`;
         this.wrap.style.transform = `translateX(-${
-          (100 / this.options.maxPosition) * (this.options.position / 1.28)
-        }%)`;
+          ((this.wrap.clientWidth - this.main.clientWidth) /
+            this.options.maxPosition) *
+          this.options.position
+        }px)`;
       } else {
         this.wrap.style.transform = `translateX(-${
           this.options.position * this.options.widthSlide
@@ -181,8 +186,10 @@ class SliderCarousel {
 
       if (this.adaptiveWidth) {
         this.wrap.style.transform = `translateX(-${
-          (100 / this.options.maxPosition) * (this.options.position / 1.28)
-        }%)`;
+          ((this.wrap.clientWidth - this.main.clientWidth) /
+            this.options.maxPosition) *
+          this.options.position
+        }px)`;
       } else {
         this.wrap.style.transform = `translateX(-${
           this.options.position * this.options.widthSlide

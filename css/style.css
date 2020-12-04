@@ -2638,6 +2638,7 @@ div.wave-block:nth-child(17):after {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+
 @media (max-width: 1228px) {
   .problems-item {
     max-width: 240px;
@@ -2732,6 +2733,9 @@ div.wave-block:nth-child(17):after {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
+.problems-item.active-item .problems-item__icon-inner {
+  opacity: 1;
+}
 @media (min-width: 1025px) {
   .problems-item__icon-inner {
     opacity: 0;
@@ -2753,6 +2757,10 @@ div.wave-block:nth-child(17):after {
   -ms-flex-align: center;
   align-items: center;
   background: url("../images/plus.svg") center no-repeat;
+  transition: 0.3s ease;
+}
+.problems-item.active-item .problems-item__icon .svg-wrap {
+  transform: rotate(45deg);
 }
 .problems-item-popup {
   position: absolute;
@@ -4819,12 +4827,12 @@ div.wave-block:nth-child(17):after {
   height: 100%;
   background: url("../images/main/menu-bg.png");
   background-size: cover;
-  -webkit-transition: 1s;
-  transition: 1s;
 }
 .popup-dialog-menu.active-menu {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 @media (max-width: 1024px) {
   .popup-dialog-menu {
@@ -5155,6 +5163,9 @@ div.wave-block:nth-child(17):after {
   padding-left: 22px;
   border: 3px solid #eeebe5 !important;
   border-radius: 20px !important;
+}
+.popup-repair-types-nav__item.preview_active {
+  border-color: #f48922 !important;
 }
 @media (max-width: 1024px) {
   .popup-repair-types-nav__item {
